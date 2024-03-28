@@ -1,0 +1,17 @@
+#card {
+    padding: 1rem;
+    width: 500px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: linear-gradient(#000, #000) 
+        padding-box,
+        linear-gradient(225deg, #b71196, #5e10e5, #e3ee07) border-box;
+    border: 5px solid transparent;
+    border-radius: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+}
