@@ -1,0 +1,13 @@
+body {
+    background-color: black;
+}
+
+#testo {
+    background-image: url('text-image.png');
+    background-clip: text;
+    color: transparent;
+    background-color: white;
+    font-size: 40vh;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
