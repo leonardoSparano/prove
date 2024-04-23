@@ -2,9 +2,8 @@
 
 import java.util.*;
 import java.io.*;
-import java.lang.*;
 
-public class cioccolato {
+public class calcolatrice {
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
         Locale.setDefault(Locale.US);
@@ -21,49 +20,29 @@ public class cioccolato {
         int T = Integer.parseInt(next());
         for (int test = 1; test <= T; ++test) {
             long N = Long.parseLong(next());
-            long M = Long.parseLong(next());
-            long K = Long.parseLong(next());
 
-            long risposta = 0;
+            int operazioni = 0;
 
-            // INSERISCI IL TUO CODICE QUI
-            for (int i = 0; i < K; i++) {
-                if (N > M) {
-                    long tmp = N - M;
-                    if (tmp < K - i) {
-                        N -= tmp;
-                        i += tmp - 1;
+            if (N == 1 && N == 2) {
+                operazioni = 1;
+            } else {
+                operazioni = 1;
+                long tmp = N;
+                while (tmp != 2) {
+                    if (tmp % 2 != 0) {
+                        tmp = tmp/2 + 1;
+                        operazioni += 2;
                     } else {
-                        N -= K - i;
-                        break;
+                        tmp = tmp/2;
+                        operazioni++;
                     }
-                } else if (M > N) {
-                    long tmp = M - N;
-                    if (tmp < K - i) {
-                        M -= tmp;
-                        i += tmp - 1;
-                    } else {
-                        M -= K - i;
-                        break;
-                    }
-                } else {
-                    long tmp = K - i;
-                    if (tmp % 2 == 0) {
-                        N -= tmp / 2;
-                        M -= tmp / 2;
-                    } else {
-                        N -= tmp / 2;
-                        M -= tmp / 2 + 1;
-                    }
-                    break;
                 }
             }
-            risposta = N * M;
 
             writer.write("Case #");
             writer.write(String.valueOf(test));
             writer.write(": ");
-            writer.write(String.valueOf(risposta));
+            writer.write(String.valueOf(operazioni));
             writer.write('\n');
         }
 
